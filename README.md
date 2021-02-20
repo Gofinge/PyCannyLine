@@ -2,4 +2,4 @@
 CannyLine Python Version
 
 #  Demo
-under "if __name__ == '__main__':" in "cannyline.py"
+under "if \_\_name__ == '\_\_main\_\_':" in "cannyline.py"
