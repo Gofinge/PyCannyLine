@@ -56,7 +56,7 @@ class MetaLine(object):
         if len(original_image.shape) == 2:
             self.rows, self.cols = original_image.shape
         else:
-            self.rows, self.cols, *_ = original_image.shape
+            self.rows, self.cols, _ = original_image.shape
 
         self.n4 = np.square(self.rows * self.rows)
 
@@ -1046,7 +1046,7 @@ class MetaLine(object):
 
 if __name__ == '__main__':
     import os
-    source_dir = r"\\OMV\Gofinge\Documents\Data\datamatrix\JHT"
+    source_dir = r"image"
     os.makedirs("output", exist_ok=True)
     image_list = []
     extension_write_list = [".png", ".bmp", ".jpg"]
@@ -1063,9 +1063,9 @@ if __name__ == '__main__':
         print("processing: {}".format(os.path.basename(image_path)))
         image = cv2.imread(image_path, 0)
         # image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        image = cv2.pyrDown(image)
-        image = cv2.pyrDown(image)
-        image = cv2.pyrDown(image)
+        # image = cv2.pyrDown(image)
+        # image = cv2.pyrDown(image)
+        # image = cv2.pyrDown(image)
 
         results = detector.meta_line_detection(image, 1, 1)
         image = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
